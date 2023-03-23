@@ -16,3 +16,11 @@ Other keymaps:
 
 ## [Overleaf - Compile Time](https://github.com/BLumbye/overleaf-userscripts/raw/master/Overleaf-CompileTime.user.js)
 Displays the time it is taking to compile the document in the bottom left corner of the PDF. It currently does not measure the initial compile, and it will break when changing between different layouts.
+
+## [Overleaf - File History](https://github.com/BLumbye/overleaf-userscripts/raw/master/Overleaf-FileHistory.user.js)
+Lets you navigate between previously opened files using the browser history. The extension adds an item to the browser history whenever opening a new file, meaning that when you try to go back you will go back to that previously selected file instead of another page.
+
+This of course also means that it can be hard to navigate back to previous pages other than the selected files since the history will be filled with these files.
+
+Known bugs:
+- When navigating back to files other than documents, that file will not be highlighted in the file tree. I currently don't know exactly what root cause of this is. Pull requests are welcome.
