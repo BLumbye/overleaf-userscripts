@@ -4,10 +4,13 @@
 // @version      0.6
 // @description  Paste images from your clipboard directly into Overleaf (Community Edition, Cloud and Pro)
 // @author       Sebastian Haas, Benjamin Lumbye
+// @license      GPL-3
 // @match        https://www.overleaf.com/project/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js
 // @grant        none
 // ==/UserScript==
+
+// Based on https://github.com/cmprmsd/Overleaf-Image-Helper
 
 'use strict';
 
