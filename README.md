@@ -13,9 +13,6 @@ Editor keymaps:
 
 Other keymaps:
 - <kbd>F2</kbd> when file is in focus: Rename the file. Functionally the exact same as pressing the pencil button in the toolbar. This does not interfere with the default binding to toggle fold.
-<<<<<<< HEAD
 
 ## [Overleaf - Compile Time](https://github.com/BLumbye/overleaf-userscripts/raw/master/Overleaf-CompileTime.user.js)
 Displays the time it is taking to compile the document in the bottom left corner of the PDF. It currently does not measure the initial compile, and it will break when changing between different layouts.
-=======
->>>>>>> 0ed8e4b20e16a6485252d756673318281fcf6b2f
