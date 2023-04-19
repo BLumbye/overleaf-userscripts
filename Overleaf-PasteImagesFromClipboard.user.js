@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Overleaf - Paste Images from Clipboard
 // @namespace    https://github.com/BLumbye/overleaf-userscripts
-// @version      0.6
+// @version      0.7
 // @description  Paste images from your clipboard directly into Overleaf (Community Edition, Cloud and Pro)
 // @author       Sebastian Haas, Benjamin Lumbye
 // @license      GPL-3
@@ -34,17 +34,25 @@ function retrieveImageFromClipboardAsBlob(pasteEvent, callback) {
 // Upload the image blob
 async function uploadImage(imageBlob, hash) {
   try {
+    const headers = new Headers();
+    headers.append('x-csrf-token', csrfToken);
+
+    const name = `${hash}.png`;
     const formData = new FormData();
-    formData.append('qqfile', imageBlob, hash + '.png');
+    formData.append('relativePath', null);
+    formData.append('name', name);
+    formData.append('type', 'image/png');
+    formData.append('qqfile', imageBlob, name);
+
     const result = await fetch(
       `${document.location.pathname}/upload?` +
         new URLSearchParams({
           folder_id: _ide.fileTreeManager.findEntityByPath(assetsFolder).id,
-          _csrf: csrfToken,
         }),
       {
         method: 'POST',
         body: formData,
+        headers,
       },
     );
     const json = await result.json();
